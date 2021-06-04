@@ -8,8 +8,8 @@
 /**
  * UserViewProtocol 协议定义了一下方法，这些方法其实就是presenter对view层发送的命令
  */
-#import "UserModel.h"
 
+@class UserModel;
 @protocol UserViewProtocol <NSObject>
 
 - (void)userViewDataSource:(NSArray<UserModel *> *)data;

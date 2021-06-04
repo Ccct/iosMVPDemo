@@ -29,6 +29,8 @@
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.indicatorView];
     
+    self.presenter = [[Presenter alloc] init];
+    [self.presenter attachView:self]; //绑定
     [self.presenter fetchData];
 }
 
@@ -91,14 +93,6 @@
         _indicatorView.hidesWhenStopped = YES;
     }
     return _indicatorView;
-}
-
-- (Presenter *)presenter {
-    if (_presenter == nil) {
-        _presenter = [[Presenter alloc] init];
-        [_presenter attachView:self]; //绑定
-    }
-    return _presenter;
 }
 
 @end

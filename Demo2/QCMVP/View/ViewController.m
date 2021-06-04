@@ -32,6 +32,17 @@
     [self.presenter exchangeData];
 }
 
+//MARK: QCTestProcotal delagete
+-(void)changeBgColor{
+    self.tableView.backgroundColor = [UIColor lightGrayColor];
+}
+
+-(void)bindDataSurce:(NSArray *)data{
+    
+    self.bindArr = data;
+    [self.tableView reloadData];
+}
+
 
 //MARK: tableview DataSource
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -46,18 +57,6 @@
     cell.textLabel.textColor =[UIColor grayColor];
     cell.textLabel.textAlignment = NSTextAlignmentCenter;
     return cell;
-}
-
-//MARK: QCTestProcotal delagete
--(void)changeBgColor{
-    
-    self.tableView.backgroundColor = [UIColor lightGrayColor];
-}
-
--(void)bindDataSurce:(NSArray *)data{
-    
-    self.bindArr = data;
-    [self.tableView reloadData];
 }
 
 //MARK: tableview 懒加载
