@@ -10,6 +10,8 @@
 #import "CTView.h"
 
 @interface CTPresenter()<CTViewDelegate>
+
+//p和v相互持有，互有对象，所以通过weak打破循环引用
 @property (weak, nonatomic) UIViewController *controller;
 @end
 
